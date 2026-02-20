@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Roofing Specialists Inc. | Brantford, ON</title>
+<meta name="description" content="The Roofing Specialists Inc. specializes in residential and commercial roofing projects of all shapes and sizes. Whether it's asphalt, fiberglass, or cedar">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --dark:#1c1c1c;
+  --accent:#cf2e2e;
+  --cta:#b91c1c;
+  --light:#f5f5f5;
+  --text:#1c1c1c;
+  --muted:#6b7280;
+  --surface:#f8f9fa;
+  --card:#fff;
+  --border:#e5e7eb;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#fff;color:var(--text);line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(28,28,28,0.97);backdrop-filter:blur(12px);border-bottom:3px solid var(--accent)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 5%}
+.nav-logo{font-size:1.2rem;font-weight:800;color:#fff;line-height:1.2}
+.nav-logo span{color:var(--accent);display:block;font-size:0.7rem;font-weight:500;letter-spacing:1px;text-transform:uppercase}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:#d1d5db;text-decoration:none;font-size:0.88rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--accent);color:#fff;padding:9px 22px;border-radius:5px;font-weight:700;font-size:0.85rem;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--cta)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 5% 80px}
+.hero-bg{position:absolute;inset:0;background:url('images/hero.jpg') center 30%/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(28,28,28,0.92) 50%,rgba(28,28,28,0.5))}
+.hero-content{position:relative;max-width:1200px;margin:0 auto;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:7px 18px;border-radius:4px;font-size:0.78rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:20px}
+.hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.1;color:#fff;margin-bottom:16px;letter-spacing:-1px}
+.hero h1 em{color:var(--accent);font-style:normal}
+.hero-tagline{font-size:1.25rem;color:#fff;font-weight:700;margin-bottom:12px;letter-spacing:.3px}
+.hero-sub{font-size:1rem;color:#d1d5db;max-width:520px;margin-bottom:36px;line-height:1.7}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#fff;padding:15px 34px;border-radius:5px;font-weight:700;font-size:1rem;text-decoration:none;transition:all .2s;border:none;cursor:pointer;display:inline-block}
+.btn-primary:hover{background:var(--cta);transform:translateY(-2px);box-shadow:0 8px 25px rgba(207,46,46,0.4)}
+.btn-secondary{background:transparent;border:2px solid rgba(255,255,255,0.5);color:#fff;padding:15px 34px;border-radius:5px;font-weight:600;font-size:1rem;text-decoration:none;transition:all .2s;display:inline-block}
+.btn-secondary:hover{border-color:#fff;background:rgba(255,255,255,0.08)}
+
+/* STATS BAR */
+.stats-bar{background:var(--dark);padding:32px 5%}
+.stats-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center}
+.stat-item{padding:16px}
+.stat-value{font-size:2rem;font-weight:900;color:var(--accent);display:block;line-height:1}
+.stat-label{font-size:0.78rem;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px;margin-top:5px}
+
+/* INTRO */
+.intro{padding:80px 5%;background:#fff}
+.intro-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.intro-img{position:relative;border-radius:10px;overflow:hidden}
+.intro-img img{width:100%;height:400px;object-fit:cover;display:block}
+.intro-badge{position:absolute;top:20px;left:20px;background:var(--accent);color:#fff;padding:8px 16px;border-radius:4px;font-weight:700;font-size:0.8rem}
+.intro-content .label{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.intro-content h2{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;line-height:1.2;margin-bottom:18px;color:var(--dark)}
+.intro-content p{color:var(--muted);line-height:1.8;margin-bottom:16px}
+.intro-cta{margin-top:24px}
+
+/* SERVICES */
+.services{background:var(--surface);padding:90px 5%}
+.services-inner{max-width:1200px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:56px}
+.section-header .label{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.section-header h2{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--dark)}
+.section-header p{color:var(--muted);max-width:560px;margin:12px auto 0;line-height:1.7}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.service-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:30px;transition:all .3s;position:relative;overflow:hidden}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.service-card:hover{box-shadow:0 12px 36px rgba(0,0,0,0.1);transform:translateY(-3px);border-color:transparent}
+.service-card:hover::after{transform:scaleX(1)}
+.service-icon{font-size:2rem;margin-bottom:14px;display:block}
+.service-card h3{font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:10px}
+.service-card p{font-size:0.88rem;color:var(--muted);line-height:1.65}
+
+/* GALLERY */
+.gallery{padding:90px 5%;background:#fff}
+.gallery-inner{max-width:1200px;margin:0 auto}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px;margin:0 auto}
+.gallery-item{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/3}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.gallery-item:hover img{transform:scale(1.04)}
+.gallery-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(28,28,28,0.85),transparent);padding:20px 18px 16px;color:#fff;font-weight:700;font-size:0.9rem}
+
+/* CHECKLIST / WHY US */
+.why-us{background:var(--dark);padding:90px 5%}
+.why-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.why-img img{width:100%;height:440px;object-fit:cover;border-radius:10px;display:block}
+.why-content .label{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.why-content h2{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:#fff;margin-bottom:24px}
+.why-list{list-style:none;display:grid;gap:14px}
+.why-list li{display:flex;align-items:flex-start;gap:14px;color:#d1d5db;font-size:0.95rem;line-height:1.6}
+.why-check{width:22px;height:22px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:0.7rem;font-weight:700;margin-top:2px}
+
+/* CONTACT */
+.contact{background:var(--surface);padding:90px 5%}
+.contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contact-info .label{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.contact-info h2{font-size:2rem;font-weight:800;color:var(--dark);margin-bottom:20px}
+.contact-info p{color:var(--muted);line-height:1.7;margin-bottom:28px}
+.contact-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
+.contact-icon{width:42px;height:42px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;color:#fff}
+.contact-text strong{display:block;font-weight:700;color:var(--dark);margin-bottom:2px}
+.contact-text span{color:var(--muted);font-size:0.9rem}
+.contact-form{background:#fff;border:1px solid var(--border);border-radius:12px;padding:36px}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:0.8rem;font-weight:700;color:var(--dark);margin-bottom:7px;text-transform:uppercase;letter-spacing:.5px}
+.form-group input,.form-group select,.form-group textarea{width:100%;border:1.5px solid var(--border);color:var(--text);padding:11px 14px;border-radius:7px;font-size:0.93rem;transition:border-color .2s;outline:none;font-family:inherit;background:#fff}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent)}
+.form-group textarea{resize:vertical;min-height:110px}
+
+/* CHAT */
+.chat-widget{position:fixed;bottom:24px;right:24px;z-index:200}
+.chat-btn{width:58px;height:58px;background:var(--accent);border-radius:50%;border:none;cursor:pointer;font-size:1.5rem;box-shadow:0 6px 24px rgba(207,46,46,0.5);display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.chat-btn:hover{transform:scale(1.1)}
+.chat-box{position:absolute;bottom:70px;right:0;width:310px;background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 16px 50px rgba(0,0,0,0.18);display:none;flex-direction:column}
+.chat-box.open{display:flex}
+.chat-header{background:var(--dark);padding:14px 18px;display:flex;align-items:center;gap:12px}
+.chat-avatar{width:36px;height:36px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.chat-header-info strong{display:block;color:#fff;font-weight:700;font-size:0.9rem}
+.chat-header-info span{color:#9ca3af;font-size:0.72rem}
+.chat-online{width:7px;height:7px;background:#22c55e;border-radius:50%;margin-left:auto;box-shadow:0 0 6px #22c55e}
+.chat-msgs{padding:16px;flex:1;display:flex;flex-direction:column;gap:10px;max-height:240px;overflow-y:auto}
+.msg{padding:9px 12px;border-radius:9px;font-size:0.85rem;line-height:1.5;max-width:86%}
+.msg.bot{background:#f3f4f6;color:var(--text);align-self:flex-start}
+.msg.user-msg{background:var(--accent);color:#fff;align-self:flex-end}
+.chat-input-row{display:flex;gap:7px;padding:12px 14px;border-top:1px solid var(--border)}
+.chat-input{flex:1;border:1.5px solid var(--border);color:var(--text);padding:9px 12px;border-radius:7px;font-size:0.85rem;outline:none;font-family:inherit}
+.chat-send{background:var(--accent);border:none;color:#fff;width:36px;height:36px;border-radius:7px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center}
+
+/* FOOTER */
+footer{background:var(--dark);color:#9ca3af;padding:50px 5% 28px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px;padding-bottom:36px;border-bottom:1px solid #333}
+.footer-logo{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:12px}
+.footer-logo span{color:var(--accent)}
+.footer-desc{font-size:0.85rem;line-height:1.7;max-width:300px}
+.footer-col h4{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#6b7280;margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.footer-col ul li a{color:#9ca3af;text-decoration:none;font-size:0.85rem;transition:color .2s}
+.footer-col ul li a:hover{color:var(--accent)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:20px;font-size:0.78rem}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .intro-inner,.why-inner,.contact-inner{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .hero h1{font-size:2.1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      The Roofing Specialists
+      <span>Where Quality Counts & Customers Come 1st</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="tel:+15198615100" class="nav-cta">Call 519.861.5100</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">⭐ 4.5-Star Rated Roofer — Brantford, ON</div>
+    <h1>The Roofing Specialists<br><em>Inc.</em></h1>
+    <p class="hero-tagline">Where Quality Counts & Customers Come 1st!</p>
+    <p class="hero-sub">Residential &amp; commercial roofing — shingles, cedar, flat, steel, skylights, eavestrough, siding &amp; more. Free estimates.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Get a Free Estimate</a>
+      <a href="tel:+15198615100" class="btn-secondary">📞 519.861.5100</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-item"><span class="stat-value">Res.</span><span class="stat-label">Residential</span></div>
+    <div class="stat-item"><span class="stat-value">Com.</span><span class="stat-label">Commercial</span></div>
+    <div class="stat-item"><span class="stat-value">4.5★</span><span class="stat-label">Google Rating</span></div>
+    <div class="stat-item"><span class="stat-value">Free</span><span class="stat-label">Estimates</span></div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section id="about" class="intro">
+  <div class="intro-inner">
+    <div class="intro-img">
+      <img src="images/shingles.jpg" alt="Professional roofing work" loading="lazy">
+      <div class="intro-badge">Certified Velux Installer</div>
+    </div>
+    <div class="intro-content">
+      <div class="label">About Us</div>
+      <h2>Brantford's Roofing Specialists</h2>
+      <p>The Roofing Specialists Inc. specializes in residential and commercial roofing projects of all shapes and sizes. Whether it's asphalt, fiberglass, or cedar shake shingles, we can meet your needs. We also do flat roofing systems and sheet metal, plus skylight installation, chimney removal, custom metal flashing, soffit & fascia, and 5" seamless eavestrough.</p>
+      <p>Contact us today for a free written estimate. No obligation — just honest pricing from Brantford's trusted roofing pros.</p>
+      <div class="intro-cta">
+        <a href="#contact" class="btn-primary">Request a Free Estimate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="services-inner">
+    <div class="section-header">
+      <div class="label">What We Do</div>
+      <h2>Complete Roofing & Exterior Services</h2>
+      <p>From new roofs to eavestrough, siding, and skylights — The Roofing Specialists handles every aspect of your home's exterior.</p>
+    </div>
+    <div class="services-grid">
+      
+      <div class="service-card">
+        <span class="service-icon">🏠</span>
+        <h3>Asphalt & Fiberglass Shingles</h3>
+        <p>We specialize in asphalt and fiberglass shingle installations for residential and commercial properties. Quality materials, expert installation, lasting results.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🌲</span>
+        <h3>Cedar Shake Shingles</h3>
+        <p>Natural cedar shake shingles add timeless curb appeal and superior insulation. We install and replace cedar roofs with craftsmanship that lasts.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🏗️</span>
+        <h3>Flat Roofing Systems</h3>
+        <p>Commercial and residential flat roofing solutions including modified bitumen, TPO, and EPDM membranes. Watertight seals and long-term performance.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🔩</span>
+        <h3>Steel Roofing</h3>
+        <p>Steel roofing delivers outstanding durability, fire resistance, and energy efficiency. We supply and install premium steel roofing systems built to last a lifetime.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">⚙️</span>
+        <h3>Sheet Metal Work</h3>
+        <p>Custom sheet metal fabrication and installation including valleys, chimney caps, and complex flashing details that protect your roof's most vulnerable points.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🌟</span>
+        <h3>Skylight Installation</h3>
+        <p>Certified Velux skylight installer. We offer FS deck-mounted and FCM curb-mounted fixed skylights — bringing natural light into your home or business.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🏚️</span>
+        <h3>Soffit & Fascia</h3>
+        <p>Solid and vented soffit panels with improved attic ventilation. Eaves, overhangs, and fascia that look great and never need painting.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🌧️</span>
+        <h3>5" Seamless Eavestrough</h3>
+        <p>Heavy-duty, seamless, continuous aluminum gutters and downspouts. Never-paint finishes in an array of colors — protecting your foundation for years.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🧱</span>
+        <h3>Chimney Removal & Metal Flashing</h3>
+        <p>Safe chimney removal and custom metal flashing fabrication. Proper flashing around penetrations and transitions is critical to a leak-free roof.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🏡</span>
+        <h3>Vinyl & Steel Siding</h3>
+        <p>Energy-efficient insulation packages with premium vinyl and steel siding. Strength, endurance, and lifetime warranties — never paint, never worry.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery">
+  <div class="gallery-inner">
+    <div class="section-header">
+      <div class="label">Sample Work</div>
+      <h2>Our Roofing Portfolio</h2>
+      <p>Browse real examples of our roofing work — shingled, steel, flat, and cedar shake roofs installed across Brantford and area.</p>
+    </div>
+    <div class="gallery-grid">
+      
+      <div class="gallery-item">
+        <img src="images/shingles.jpg" alt="Shingled Roofs" loading="lazy">
+        <div class="gallery-label">Shingled Roofs</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/steel.jpg" alt="Steel Roofs" loading="lazy">
+        <div class="gallery-label">Steel Roofs</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/flat.jpg" alt="Flat Roofs" loading="lazy">
+        <div class="gallery-label">Flat Roofs</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/shingles.jpg" alt="Cedar Roofs" loading="lazy">
+        <div class="gallery-label">Cedar Roofs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us">
+  <div class="why-inner">
+    <div class="why-img">
+      <img src="images/flat.jpg" alt="Flat roofing installation" loading="lazy">
+    </div>
+    <div class="why-content">
+      <div class="label">Why Choose Us</div>
+      <h2>Quality Roofing You Can Count On</h2>
+      <ul class="why-list">
+        
+        <li>
+          <span class="why-check">✓</span>
+          <span>Specializing in all roof types — shingle, flat, steel, cedar</span>
+        </li>
+        <li>
+          <span class="why-check">✓</span>
+          <span>Certified Velux skylight installer</span>
+        </li>
+        <li>
+          <span class="why-check">✓</span>
+          <span>Custom metal flashing, chimney removal & sheet metal work</span>
+        </li>
+        <li>
+          <span class="why-check">✓</span>
+          <span>5" heavy-duty seamless eavestrough in many colors</span>
+        </li>
+        <li>
+          <span class="why-check">✓</span>
+          <span>Energy-efficient soffit, fascia & siding packages</span>
+        </li>
+        <li>
+          <span class="why-check">✓</span>
+          <span>Free written estimates — no obligation</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div class="label">Get In Touch</div>
+      <h2>Request a Free Estimate</h2>
+      <p>Ready for a new roof? Contact The Roofing Specialists today for your free, no-obligation written estimate. We serve Brantford and surrounding areas.</p>
+      <div class="contact-detail">
+        <div class="contact-icon">📞</div>
+        <div class="contact-text"><strong>Phone</strong><span>519.861.5100</span></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">📧</div>
+        <div class="contact-text"><strong>Email</strong><span>estimates@theroofingspecialistsinc.com</span></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">📍</div>
+        <div class="contact-text"><strong>Address</strong><span>363 Paris Rd, Brantford, ON N3T 5L8</span></div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3 style="margin-bottom:22px;font-size:1.15rem;font-weight:800;color:var(--dark)">Free Roof Estimate</h3>
+      <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
+      <div class="form-group"><label>Phone</label><input type="tel" placeholder="519-000-0000"></div>
+      <div class="form-group"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+      <div class="form-group">
+        <label>Service Needed</label>
+        <select>
+          <option value="">— Select a service —</option>
+          <option>Asphalt & Fiberglass Shingles</option><option>Cedar Shake Shingles</option><option>Flat Roofing Systems</option><option>Steel Roofing</option><option>Sheet Metal Work</option><option>Skylight Installation</option><option>Soffit & Fascia</option><option>5" Seamless Eavestrough</option><option>Chimney Removal & Metal Flashing</option><option>Vinyl & Steel Siding</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Project Details</label><textarea placeholder="Describe your roofing project..."></textarea></div>
+      <button class="btn-primary" style="width:100%;font-size:1rem">Send Estimate Request →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">The <span>Roofing Specialists</span> Inc.</div>
+        <p class="footer-desc">The Roofing Specialists Inc. specializes in residential and commercial roofing projects of all shapes and sizes. Whether it's asphalt, fiberglass, or ...</p>
+        <p style="margin-top:12px;font-size:0.78rem">Brantford, ON N3T 5L8 | 519.861.5100</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Asphalt & Fiberglass Shingles</a></li><li><a href="#services">Cedar Shake Shingles</a></li><li><a href="#services">Flat Roofing Systems</a></li><li><a href="#services">Steel Roofing</a></li><li><a href="#services">Sheet Metal Work</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15198615100">519.861.5100</a></li>
+          <li><a href="mailto:estimates@theroofingspecialistsinc.com">Email Us</a></li>
+          <li><a href="#contact">363 Paris Rd</a></li>
+          <li><a href="#contact">Brantford, ON</a></li>
+          <li><a href="#contact">Free Estimates</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Roofing Specialists Inc.. All rights reserved.</span>
+      <span>Where Quality Counts & Customers Come 1st!</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CHAT WIDGET -->
+<div class="chat-widget">
+  <button class="chat-btn" onclick="toggleChat()" title="Chat with Rex">🏠</button>
+  <div class="chat-box" id="chatBox">
+    <div class="chat-header">
+      <div class="chat-avatar">🏠</div>
+      <div class="chat-header-info">
+        <strong>Rex</strong>
+        <span>Roofing Specialists Virtual Assistant</span>
+      </div>
+      <div class="chat-online"></div>
+    </div>
+    <div class="chat-msgs" id="chatMsgs">
+      <div class="msg bot">Hi! I'm Rex from The Roofing Specialists. Need a new roof, eavestrough, or skylight? I can help — or call us at 519.861.5100 for a free estimate!</div>
+    </div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="chatInput" placeholder="Ask about roofing..." onkeydown="if(event.key==='Enter')sendMsg()">
+      <button class="chat-send" onclick="sendMsg()">→</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleChat(){document.getElementById('chatBox').classList.toggle('open')}
+const replies={
+  'estimate':'We offer FREE written estimates! Fill out our form or call 519.861.5100 and we'll come out to assess your roof at no charge.',
+  'quote':'Free estimates are available — just call 519.861.5100 or submit the form on this page.',
+  'shingle':'We install asphalt, fiberglass and cedar shake shingles for all residential and commercial buildings. Multiple styles and colors available.',
+  'flat':'We specialize in flat roofing systems including modified bitumen, TPO, and EPDM. Great for commercial and low-slope applications.',
+  'steel':'Steel roofing is incredibly durable and energy efficient. We supply and install premium steel roofing systems built to last a lifetime.',
+  'cedar':'Cedar shake shingles provide natural beauty and great insulation. We install and replace cedar roofs with expert craftsmanship.',
+  'skylight':'We're certified Velux skylight installers — both deck-mounted (FS) and curb-mounted (FCM) fixed skylights are available.',
+  'eavestrough':'We install 5" heavy-duty seamless aluminum eavestrough and downspouts. Never-paint finishes in many colors.',
+  'siding':'We offer premium vinyl and steel siding with energy-efficient insulation packages. Lifetime warranties — never paint, never worry.',
+  'soffit':'We install solid and vented soffit panels that improve attic ventilation and look great with no painting required.',
+  'price':'Every roof is different. Call 519.861.5100 for your FREE written estimate — no obligation.',
+  'contact':'Reach us at 519.861.5100 or email estimates@theroofingspecialistsinc.com. We're located at 363 Paris Rd, Brantford, ON.',
+  default:'Great question! Call us at 519.861.5100 or fill out the estimate form — we're happy to help with any roofing project.'
+};
+function sendMsg(){
+  const inp=document.getElementById('chatInput');
+  const msg=inp.value.trim();
+  if(!msg)return;
+  const msgs=document.getElementById('chatMsgs');
+  msgs.innerHTML+=`<div class="msg user-msg">${msg}</div>`;
+  inp.value='';
+  const key=Object.keys(replies).find(k=>msg.toLowerCase().includes(k))||'default';
+  setTimeout(()=>{msgs.innerHTML+=`<div class="msg bot">${replies[key]}</div>`;msgs.scrollTop=msgs.scrollHeight},500);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+</script>
+</body>
+</html>
